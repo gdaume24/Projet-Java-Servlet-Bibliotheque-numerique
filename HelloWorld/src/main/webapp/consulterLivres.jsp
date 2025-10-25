@@ -25,6 +25,8 @@
 	           <th>ISBN</th>
 	           <th>Année</th>
 	           <th>Genre</th>
+	           <th>Modifier</th>
+	           <th>Supprimer</th>
 	       </tr>
        </thead>
        <tbody>
@@ -38,6 +40,15 @@
   				<td><%= livre.getIsbn() %></td>
   				<td><%= livre.getAnneePublication() %></td>
   				<td><%= livre.getGenre() %></td>
+  				<td>
+  					<a href="modifier?id=<%= livre.getId() %>">Modifier</a>
+  				</td>
+ 				<td>
+ 				    <form action="supprimer" method="post" style="display:inline;">				
+			            <input type="hidden" name="id" value="<%= livre.getId() %>">
+ 						<button type="submit" onclick="return confirm('Supprimer ce livre ?')">Supprimerr</button>
+ 					</form>
+  				</td>
   			</tr>
   		<%
        		}

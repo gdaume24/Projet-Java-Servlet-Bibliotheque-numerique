@@ -36,8 +36,6 @@ public class AjouterLivre extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter pw = response.getWriter();
-		response.setContentType("text/html");
 		String titre = request.getParameter("titreLivre");
 		String auteur = request.getParameter("auteurLivre");
 		String isbn = request.getParameter("ISBNLivre");
