@@ -11,13 +11,14 @@
 </head>
 <body>
     <h1>Gestionnaire de Livres</h1>
-
-    <form action="ajouterLivre" method="get">
-        <button type="submit">Ajouter un nouveau livre</button>
-    </form>
-
-    <form action="consulterLivres" method="get">
-        <button type="submit">Consulter la liste de tous les livres</button>
-    </form>
+	<div class="formulaires">
+		<form class="first-form" action="ajouterLivre" method="get">
+	        <button type="submit">Ajouter un nouveau livre</button>
+	    </form>
+	
+	    <form action="consulterLivres" method="get">
+	        <button type="submit">Consulter la liste de tous les livres</button>
+	    </form>
+	</div>
 </body>
 </html>

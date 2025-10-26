@@ -1,1 +1,23 @@
 @charset "UTF-8";
+
+form {
+	width: 80%;
+}
+.form-row {
+    display: flex;
+    align-items: center; /* centre verticalement si label et input ont différentes hauteurs */
+    margin-bottom: 10px;
+}
+label {
+    display: inline-block; 
+    width: auto;       /* s’adapte au texte */
+    min-width: 220px;  /* largeur minimale pour aligner les inputs */
+    text-align: right;
+    margin-right: 10px;
+}
+
+input {
+    flex: 1;           /* prend tout l’espace restant de la ligne */
+    padding: 5px;
+    box-sizing: border-box; /* important pour padding + flex */
+}

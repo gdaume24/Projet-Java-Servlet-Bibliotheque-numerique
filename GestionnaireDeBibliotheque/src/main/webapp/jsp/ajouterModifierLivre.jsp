@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/myCss/common.css">
     <link rel="stylesheet" type="text/css" href="css/myCss/ajouterModifierLivre.css">
 <title><%= isModification ? "Modifier un livre" : "Ajouter un livre" %></title>
@@ -19,17 +19,30 @@
 		<% if (isModification) { %>
 		<input type="hidden" name="idLivre" value="<%= livre.getId() %>" />
 		<% } %>
-		<label for='titreLivre'>Titre :</label>
-		<input id='titreLivre' name='titreLivre' type='text' value="<%= isModification ? livre.getTitre() : "" %>" required /><br>
-		<label for='auteurLivre'>Auteur :</label>
-		<input id='auteurLivre' name='auteurLivre' type='text' value="<%= isModification ? livre.getAuteur() : "" %>" required/><br>
-		<label for='ISBNLivre'>Numéro ISBN :</label>
-		<input id='ISBNLivre' name='ISBNLivre' type='text' value="<%= isModification ? livre.getIsbn() : "" %>" required/><br>
-		<label for='anneePublicationLivre'>Année de publication :</label>
-		<input id='anneePublicationLivre' name='anneePublicationLivre' type='number' value="<%= isModification ? livre.getAnneePublication() : null %>" required/><br>
-		<label for='genreLivre'>Genre :</label>
-		<input id='genreLivre' name='genreLivre' type='text' value="<%= isModification ? livre.getGenre() : "" %>" required/><br>
-		<button type="submit">Valider</button>
+		 <div class="form-row">
+		 	<label for='titreLivre'>Titre :</label>
+			<input id='titreLivre' name='titreLivre' type='text' value="<%= isModification ? livre.getTitre() : "" %>" required /><br>
+		 </div>
+		<div class="form-row">
+			<label for='auteurLivre'>Auteur :</label>
+			<input id='auteurLivre' name='auteurLivre' type='text' value="<%= isModification ? livre.getAuteur() : "" %>" required/><br>
+		</div>
+		<div class="form-row">
+			<label for='ISBNLivre'>Numéro ISBN :</label>
+			<input id='ISBNLivre' name='ISBNLivre' type='text' value="<%= isModification ? livre.getIsbn() : "" %>" required/><br>
+		</div>
+		<div class="form-row">
+			<label for='anneePublicationLivre'>Année de publication :</label>
+			<input id='anneePublicationLivre' name='anneePublicationLivre' type='number' value="<%= isModification ? livre.getAnneePublication() : null %>" required/><br>
+		</div>
+		<div class="form-row">
+			<label for='genreLivre'>Genre :</label>
+			<input id='genreLivre' name='genreLivre' type='text' value="<%= isModification ? livre.getGenre() : "" %>" required/><br>
+		</div>
+		<div class="form-row">
+			<button type="submit">Valider</button>
+		</div>
+		
 	</form>
     <!-- Message dynamique -->
     <%
