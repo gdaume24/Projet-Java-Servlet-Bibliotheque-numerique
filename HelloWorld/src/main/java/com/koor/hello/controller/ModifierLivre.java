@@ -86,6 +86,6 @@ public class ModifierLivre extends HttpServlet {
     	} catch (SQLException se) {
     		se.printStackTrace();
     	}
-    	response.sendRedirect("consulterLivres");
+    	response.sendRedirect("jsp/consulterLivres");
 	}
 }

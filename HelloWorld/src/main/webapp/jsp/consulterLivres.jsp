@@ -5,35 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-	.message_confirmation_form {
-	    position: fixed;
-	    top: 20px;
-	    right: 20px;
-	    background-color: #4caf50; /* vert pour succès */
-	    color: white;
-	    padding: 15px 20px;
-	    border-radius: 5px;
-	    box-shadow: 0px 2px 10px rgba(0,0,0,0.3);
-	    z-index: 1000;
-	    opacity: 1;
-	    transition: opacity 1s ease-out;
-	}
-	</style>
-	<script>
-	window.addEventListener('DOMContentLoaded', () => {
-	    const notification = document.getElementById('notification');
-	    if (notification) {
-	        setTimeout(() => {
-	            notification.style.opacity = '0';
-	            setTimeout(() => {
-	                notification.remove();
-	            }, 1000);
-	        }, 3000);
-	    }
-	});
-	</script>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/myCss/common.css">
+    <link rel="stylesheet" type="text/css" href="css/myCss/consulterLivres.css">
+   	<script src="js/notification.js"></script> 
 	<title>Insert title here</title>
 </head>
 <body>

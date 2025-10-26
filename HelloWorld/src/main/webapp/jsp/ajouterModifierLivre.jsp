@@ -8,6 +8,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/myCss/common.css">
+    <link rel="stylesheet" type="text/css" href="css/myCss/ajouterModifierLivre.css">
 <title><%= isModification ? "Modifier un livre" : "Ajouter un livre" %></title>
 </head>
 <body>

@@ -4,30 +4,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/myCss/common.css">
+    <link rel="stylesheet" type="text/css" href="css/myCss/homePage.css">
     <title>Gestionnaire de Livres</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-        h1 {
-            color: #333;
-        }
-        form {
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 8px 16px;
-            border: none;
-            background-color: #1976d2;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #125aa0;
-        }
-    </style>
 </head>
 <body>
     <h1>Gestionnaire de Livres</h1>

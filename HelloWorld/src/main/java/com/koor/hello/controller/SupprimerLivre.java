@@ -36,7 +36,7 @@ public class SupprimerLivre extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        response.sendRedirect(request.getContextPath() + "/consulterLivres");
+        response.sendRedirect(request.getContextPath() + "/jsp/consulterLivres");
 	}
 
 }

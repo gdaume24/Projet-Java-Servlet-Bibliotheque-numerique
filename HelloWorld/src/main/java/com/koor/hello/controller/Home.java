@@ -13,13 +13,9 @@ import com.koor.hello.bdd.DBConnection;
 
 @WebServlet("/home")
 public class Home extends HttpServlet {
-	       
-    public Home() {
-        super();
-    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DBConnection.getConnection();
-		request.getRequestDispatcher("/home.jsp").forward(request, response);
+		request.getRequestDispatcher("/jsp/homePage.jsp").forward(request, response);
 	}
 }
