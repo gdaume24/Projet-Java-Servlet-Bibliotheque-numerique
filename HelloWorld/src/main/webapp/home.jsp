@@ -39,21 +39,5 @@
     <form action="consulterLivres" method="get">
         <button type="submit">Consulter la liste de tous les livres</button>
     </form>
-
-    <form action="rechercherLivreParTitre" method="get">
-        <button type="submit">Rechercher un livre par son titre</button>
-    </form>
-
-    <form action="modifierLivre" method="get">
-        <button type="submit">Modifier un livre existant</button>
-    </form>
-
-    <form action="supprimerLivre" method="get">
-        <button type="submit">Supprimer un livre</button>
-    </form>
-
-    <form action="quitterApp" method="get">
-        <button type="submit">Quitter l'application</button>
-    </form>
 </body>
 </html>

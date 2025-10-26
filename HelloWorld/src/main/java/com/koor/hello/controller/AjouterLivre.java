@@ -29,7 +29,7 @@ public class AjouterLivre extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("ajouterLivre.jsp").forward(request, response);
+        request.getRequestDispatcher("ajouterModifierLivre.jsp").forward(request, response);
 	}
 
 	/**
@@ -59,6 +59,6 @@ public class AjouterLivre extends HttpServlet {
     		se.printStackTrace();
             request.setAttribute("message", "❌ Erreur SQL : " + se.getMessage());
     	}
-        request.getRequestDispatcher("ajouterLivre.jsp").forward(request, response);
+        request.getRequestDispatcher("ajouterModifierLivre.jsp").forward(request, response);
 	}
 }

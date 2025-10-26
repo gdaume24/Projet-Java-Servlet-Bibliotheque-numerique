@@ -22,7 +22,4 @@ public class Home extends HttpServlet {
 		DBConnection.getConnection();
 		request.getRequestDispatcher("/home.jsp").forward(request, response);
 	}
-
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//	}
 }
