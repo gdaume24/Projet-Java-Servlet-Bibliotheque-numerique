@@ -12,50 +12,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.koor.hello.DAO.LivreDAO;
 import com.koor.hello.bdd.DBConnection;
 import com.koor.hello.model.Livre;
 
-/**
- * Servlet implementation class ConsulterLivres
- */
 @WebServlet("/consulterLivres")
 public class ConsulterLivres extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    String requestSQL = "SELECT * FROM Livres";
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ConsulterLivres() {
-        super();
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Livre> livres = new ArrayList<>();
-    	try (PreparedStatement ps = DBConnection.getConnection().prepareStatement(requestSQL);
-		ResultSet rs = ps.executeQuery()) {
-    		while(rs.next()) {
-	        	int id = rs.getInt("id");
-	        	String isbn = rs.getString("isbn");
-	        	String titre = rs.getString("titre");
-	        	String auteur = rs.getString("auteur");
-	        	int anneePublication = rs.getInt("annee_publication");
-	        	String genre = rs.getString("genre");
-		        livres.add(new Livre(id, titre, auteur, isbn, anneePublication, genre));
-    		}
-    	} catch (SQLException se) {
-    		request.setAttribute("message", "Erreur lors de la récupération des livres :" + se.getMessage());
-	        se.printStackTrace(); 
-    	}
+        List<Livre> livres = LivreDAO.getLivres();
         request.setAttribute("livres", livres);
         request.getRequestDispatcher("jsp/consulterLivres.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String titreRecherche = request.getParameter("titre");
         String requestSQLRechercheLivre = "SELECT * FROM Livres WHERE titre LIKE ?;";
