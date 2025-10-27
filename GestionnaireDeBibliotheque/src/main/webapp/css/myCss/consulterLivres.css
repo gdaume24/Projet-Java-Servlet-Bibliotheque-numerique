@@ -17,7 +17,10 @@ body {
 .inputRechercheParTitre {
 	flex: 1;
 	margin-right: 15px;
+    padding-left: 8px; /* espace entre le bord gauche de l'input et le texte/placeholder */
+	
 }
+
 .buttonRechercher {
 	background-color: #F54927;
 	margin-left: 15px;
