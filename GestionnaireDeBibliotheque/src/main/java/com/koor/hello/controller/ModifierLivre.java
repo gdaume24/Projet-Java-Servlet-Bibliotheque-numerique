@@ -56,7 +56,7 @@ public class ModifierLivre extends HttpServlet {
     	    e.printStackTrace();
     	}
         request.setAttribute("livre", livre);
-        request.getRequestDispatcher("/ajouterModifierLivre.jsp").forward(request, response);
+        request.getRequestDispatcher("jsp/ajouterModifierLivre.jsp").forward(request, response);
 	}
 
 	/**
@@ -79,13 +79,13 @@ public class ModifierLivre extends HttpServlet {
     		ps.setInt(6, id);
     		int count = ps.executeUpdate();
     		if (count == 1) {
-                request.getSession().setAttribute("message", "✅ Le livre a bien été modifié !");
+                request.getSession().setAttribute("messageModification", "✅ Le livre a bien été modifié !");
     		} else {
-                request.getSession().setAttribute("message", "❌ Une erreur est survenue lors de la modification.");
+                request.getSession().setAttribute("messageModification", "❌ Une erreur est survenue lors de la modification.");
 			}
     	} catch (SQLException se) {
     		se.printStackTrace();
     	}
-    	response.sendRedirect("jsp/consulterLivres");
+        response.sendRedirect(request.getContextPath() + "/consulterLivres");
 	}
 }

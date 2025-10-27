@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/myCss/common.css">
-    <link rel="stylesheet" type="text/css" href="css/myCss/homePage.css">
+    <link rel="stylesheet" type="text/css" href="css/myCss/homePage.css?v=<%= System.currentTimeMillis() %>">
     <title>Gestionnaire de Livres</title>
 </head>
 <body>

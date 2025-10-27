@@ -1,23 +1,43 @@
 @charset "UTF-8";
+/* ajouterModifierLivre.css */
+#buttonRetourForm {
+	margin-bottom: 20px;
+	margin-left: 15px;
+}
+#buttonRetour {
+	background-color: #F527E4;
+	color: white;
+}
 
 form {
-	width: 80%;
+	width: 50%;
 }
 .form-row {
     display: flex;
     align-items: center; /* centre verticalement si label et input ont différentes hauteurs */
     margin-bottom: 10px;
+    margin-right: 0;
 }
 label {
     display: inline-block; 
     width: auto;       /* s’adapte au texte */
-    min-width: 220px;  /* largeur minimale pour aligner les inputs */
+    min-width: 180px;  /* largeur minimale pour aligner les inputs */
     text-align: right;
     margin-right: 10px;
 }
-
+#div-button {
+	justify-content: flex-end;
+	
+}
 input {
     flex: 1;           /* prend tout l’espace restant de la ligne */
     padding: 5px;
-    box-sizing: border-box; /* important pour padding + flex */
+    box-sizing: content-box ; /* important pour padding + flex */
+}
+.message_confirmation_form {
+	margin-top: 25px;
+	justify-content: flex-end;
+}
+#buttonValider {
+	margin-top: 15px;
 }

@@ -50,7 +50,7 @@ public class ConsulterLivres extends HttpServlet {
 	        se.printStackTrace(); 
     	}
         request.setAttribute("livres", livres);
-        request.getRequestDispatcher("/jsp/consulterLivres.jsp").forward(request, response);
+        request.getRequestDispatcher("jsp/consulterLivres.jsp").forward(request, response);
 	}
 
 	/**

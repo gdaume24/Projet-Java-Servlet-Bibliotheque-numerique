@@ -13,7 +13,7 @@ h1 {
 	margin-bottom: 160px;
 }
 h2 {
-	margin-bottom: 30px;
+	margin-bottom: 80px;
 }
 button {
     padding: 8px 16px;
@@ -23,4 +23,11 @@ button {
 }
 button:hover {
     opacity: 0.9;
+}
+#buttonValider {
+	color: white;
+	margin-top: 30px;
+	margin-left: 10px;
+	background-color: #F54927;
+	self-align: flex-end;
 }

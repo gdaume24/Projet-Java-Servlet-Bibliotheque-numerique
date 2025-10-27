@@ -32,11 +32,16 @@ public class SupprimerLivre extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
         try (PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql)) {
             ps.setInt(1, id);
-            ps.executeUpdate();
+            int count = ps.executeUpdate();
+            if (count == 1) {
+                request.getSession().setAttribute("messageDeletion", "✅ Le livre a bien été supprimé !");
+    		} else {
+                request.getSession().setAttribute("messageDeletion", "❌ Une erreur est survenue lors de la suppression.");
+			}
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        response.sendRedirect(request.getContextPath() + "/jsp/consulterLivres");
+        response.sendRedirect(request.getContextPath() + "/consulterLivres");
 	}
 
 }
