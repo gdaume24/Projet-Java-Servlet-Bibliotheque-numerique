@@ -1,9 +1,63 @@
 @charset "UTF-8";
-.message_confirmation_form {
+
+h1 {
+	margin-bottom: 30px;
+}
+body {
+	display: flex;
+}
+.formAndTableContainer {
+	width: 80%;
+}
+.formRecherche {
+	margin-top: 25px;
+	display: flex;
+	margin-bottom: 10px;
+}
+.inputRechercheParTitre {
+	flex: 1;
+	margin-right: 15px;
+    padding-left: 8px; /* espace entre le bord gauche de l'input et le texte/placeholder */
+	
+}
+
+.buttonRechercher {
+	background-color: #F54927;
+	margin-left: 15px;
+    margin-left: auto; /* pousse le bouton complètement à droite */
+}
+table {
+	width: 100%;
+	margin-top: 15px;
+}
+td, th {
+	text-align: center; 
+	vertical-align: middle;
+}
+.tableActionForm {
+	display: block;
+}
+.boutonTable {
+	color: blue; 
+	text-decoration: underline; 
+	cursor: pointer; 
+	background-color: Transparent; 
+	border: none; 
+	display: block;
+	margin: auto;
+}
+#bouton-modifier-table {
+	color: blue;
+	
+}
+#bouton-supprimer-table {
+	color: red;
+	
+}
+.notification {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #4caf50; /* vert pour succès */
     color: white;
     padding: 15px 20px;
     border-radius: 5px;
@@ -11,4 +65,17 @@
     z-index: 1000;
     opacity: 1;
     transition: opacity 1s ease-out;
+}
+#message_modification {
+    background-color: #865780; 
+}
+#message_deletion {
+    background-color: red; 
+}
+.retourMenuButtonForm {
+	margin-top: 10px;
+}
+.buttonForm {
+	background-color: #F527E4;
+	
 }

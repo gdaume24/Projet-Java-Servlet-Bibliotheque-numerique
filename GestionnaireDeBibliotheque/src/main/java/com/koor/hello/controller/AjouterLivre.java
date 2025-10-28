@@ -10,7 +10,9 @@ import java.io.PrintWriter;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.koor.hello.DAO.LivreDAO;
 import com.koor.hello.bdd.DBConnection;
+import com.koor.hello.model.Livre;
 
 /**
  * Servlet implementation class AjouterLivre
@@ -39,26 +41,18 @@ public class AjouterLivre extends HttpServlet {
 		String titre = request.getParameter("titreLivre");
 		String auteur = request.getParameter("auteurLivre");
 		String isbn = request.getParameter("ISBNLivre");
-		String annee = request.getParameter("anneePublicationLivre");
-		int anneePublication;
-	    anneePublication = Integer.parseInt(annee); 
+		int anneePublication = Integer.parseInt(request.getParameter("anneePublicationLivre"));
 		String genre = request.getParameter("genreLivre");
-    	try (PreparedStatement ps = DBConnection.getConnection().prepareStatement(query);) {
-    		ps.setString(1, titre);
-    		ps.setString(2, auteur);
-    		ps.setString(3, isbn);
-    		ps.setInt(4, anneePublication);
-    		ps.setString(5, genre);
-    		int count = ps.executeUpdate();
-    		if (count == 1) {
-                request.setAttribute("message", "✅ Le livre a été ajouté à la base de données !");
-    		} else {
-                request.setAttribute("message", "❌ Une erreur est survenue lors de l'enregistrement du livre.");
-			}
-    	}catch (SQLException se) {
-    		se.printStackTrace();
-            request.setAttribute("message", "❌ Erreur SQL : " + se.getMessage());
-    	}
+		
+	    Livre livre = new Livre(titre, auteur, isbn, anneePublication, genre);
+
+	    boolean success = LivreDAO.ajouterLivre(livre);
+
+	    if (success) {
+	        request.setAttribute("message", "✅ Le livre a été ajouté à la base de données !");
+	    } else {
+	        request.setAttribute("message", "❌ Une erreur est survenue lors de l'enregistrement du livre.");
+	    }
         request.getRequestDispatcher("jsp/ajouterModifierLivre.jsp").forward(request, response);
 	}
 }

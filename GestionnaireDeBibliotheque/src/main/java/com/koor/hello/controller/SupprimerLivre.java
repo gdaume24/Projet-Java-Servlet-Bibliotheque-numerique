@@ -9,34 +9,21 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.koor.hello.DAO.LivreDAO;
 import com.koor.hello.bdd.DBConnection;
 
-/**
- * Servlet implementation class SupprimerLivre
- */
 @WebServlet("/supprimerLivre")
 public class SupprimerLivre extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SupprimerLivre() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String sql = "DELETE FROM Livres WHERE id = ?";
-
 		int id = Integer.parseInt(request.getParameter("id"));
-        try (PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql)) {
-            ps.setInt(1, id);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        response.sendRedirect(request.getContextPath() + "/jsp/consulterLivres");
+		boolean success = LivreDAO.supprimerLivreById(id);
+        if (success) {
+            request.getSession().setAttribute("messageDeletion", "✅ Le livre a bien été supprimé !");
+		} else {
+            request.getSession().setAttribute("messageDeletion", "❌ Une erreur est survenue lors de la suppression.");
+		}
+        response.sendRedirect(request.getContextPath() + "/consulterLivres");
 	}
-
 }
